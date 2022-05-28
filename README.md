@@ -102,7 +102,7 @@ interface MovieRepository : Neo4jRepository<Movie, Long> {
 }
 ```
 
-Now, run the Spring Boot application and try to send some queries using your favourite HTTP client, for example, Insomnia.
+Now, run the Spring Boot application and try to send some queries using your favourite HTTP client, for example, [Insomnia](https://insomnia.rest/).
 
 Sample Request
 ```graphql
@@ -196,7 +196,7 @@ Sample Response
         "actors": [],
         "reviews": []
       },
-            // ...
+      // ...
 ```
 
 ## Nested Queries
@@ -263,8 +263,7 @@ Let's execute the queries again. All the reviewers, the people they follow and t
                   "name": "Jessica Thompson"
                 }
               ]
-            },
-            "createdWhen": null
+            }
           },
           {
             "summary": "A solid romp",
@@ -273,8 +272,7 @@ Let's execute the queries again. All the reviewers, the people they follow and t
               "name": "Jessica Thompson",
               "follows": [],
               "followers": []
-            },
-            "createdWhen": null
+            }
           }
         ]
       },
@@ -463,7 +461,7 @@ After adding this boilerplate, adding new records, and adding the new field to t
         }
       ]
     },
-        // ...
+    // ...
 ```
 
 ## Customizing Error Response
