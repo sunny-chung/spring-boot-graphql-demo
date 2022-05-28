@@ -1,0 +1,52 @@
+# Queries
+
+scalar Instant
+
+type Query {
+    movie(name: String!): Movie
+    movies: [Movie!]!
+}
+
+type Movie {
+    id: Int!
+    title: String!
+    tagline: String
+    released: Int!
+
+    director: [Person!]
+    actors: [Actor!]
+    reviews: [Review!]
+}
+
+type Actor {
+    name: String!
+    roles: [String!]
+}
+
+type Person {
+    name: String!
+    follows: [Person!]
+    followers: [Person!]
+    wroteReviews: [Review!]
+}
+
+type Review {
+    summary: String!
+    rating: Int!
+    reviewer: Person
+    createdWhen: Instant
+}
+
+# Mutations
+
+input AddMovieReviewInput {
+    reviewer: String!
+    summary: String!
+    rating: Int!
+    movie: String!
+}
+
+type Mutation {
+    addMovieReview(input: AddMovieReviewInput): Review!
+    deleteMovieReviews(movieName: String!): Boolean
+}
