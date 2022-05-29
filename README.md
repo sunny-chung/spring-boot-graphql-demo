@@ -102,7 +102,7 @@ interface MovieRepository : Neo4jRepository<Movie, Long> {
 }
 ```
 
-Now, run the Spring Boot application and try to send some queries using your favourite HTTP client, for example, [Insomnia](https://insomnia.rest/).
+Now, run the Spring Boot application and try to send some queries using your favourite HTTP client, for example, [Insomnia](https://insomnia.rest/). The GraphQL endpoint is `POST http://localhost:8080/graphql`.
 
 Sample Request
 ```graphql
